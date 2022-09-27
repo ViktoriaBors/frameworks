@@ -75,3 +75,73 @@ computed properties
 data property inside the component which depends on other data
 array - filtered book array, it depends on the books array. If it changes then the filtered array is changed
 computed inside our app - a function which returns the filtered books bu using filter array function
+
+5. Full VUE project
+vue cli -> setting up
+- sudo npm install -g @vue/cli -> globally installing vue cli so we can access it
+- vue create PROJECT_NAME (be inside the folder you want to create the project)
+- cd modal-project
+- npm run serve
+
+Project folder content
+- node_modules -> all dependencies
+- public -> index.html single page, this is the index.html sent to initially and then dynamically inject vue component
+- src
+    css, components, templates
+    main.js - starts the application
+    component -app.vue
+        template, script and style
+- package.json -> all the dependencies 
+
+Templates
+.vue - single component file
+html template
+script - export component object - optional
+style - optional
+
+template - can have may root (html tag vue element inside)
+script - component, name, property, data etc
+style - can be global
+
+Templates Ref
+document.querySelector -> in Vue instead we use template refs
+inside the template we add a ref=Name as you want attribute. 
+When we want to refer to it in the script - THIS.$refs.Name what you chose.
+then we can do normal JS like classList.add("some css") or .value etc
+
+Multiple Components
+separate components for navbar, footer, article etc - so we can reuse them
+
+App.vue - root component
+header footer article - all nested individually inside the app component
+but inside these components can be nested other components again
+parent and child components
+
+import component import name form path - inside the script tag where you use 
+it. Plus needs to be added in export default components: {}, then can be added to the template
+PROBLEM with multiword - go to vue.config.js and add - lintOnSave: false
+
+5. Continue with Vue full project and component
+Style - its globally if we just refer to a h1 - all h1 in every component going to be styled like that
+solutions:
+- add scoped to the style tag inside the component
+using a lot - might be bad solution
+- made the selector more specific like .modal h1
+- global style sheet inside assets (instead #app in app.vue) - write it inside the main.js file as import
+
+Props
+can be passed from a parent to a child components (data passing), therefore define the data at the parent component.
+Be in the parent component - In the template next the imported child component name a prop and give a value like <Modal header="Sign up for give away"/>
+then in the child component vue write a script that the component accepts props
+    <script>
+            export default {
+            props:["header"]
+            }
+    </script>
+
+passing data - :header="", choose a data from the data(){return{}}
+
+
+
+
+
