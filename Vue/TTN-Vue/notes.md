@@ -80,6 +80,11 @@ computed inside our app - a function which returns the filtered books bu using f
 vue cli -> setting up
 - sudo npm install -g @vue/cli -> globally installing vue cli so we can access it
 - vue create PROJECT_NAME (be inside the folder you want to create the project)
+Manually selected features
+space for no linter -enter
+vue 3 -enter
+dedicated config files
+no
 - cd modal-project
 - npm run serve
 
@@ -140,6 +145,40 @@ then in the child component vue write a script that the component accepts props
     </script>
 
 passing data - :header="", choose a data from the data(){return{}}
+
+Custom events
+can be fired in the child components and then it can be listened to from the parent component
+click - custom event 
+this.$emit("name of the event") - then in the parent components can be written @close=the function we want to use which is in the parent components
+
+Event modifiers
+modal is also closing when we click on the modal body/red part and not just at the backdrop
+@click. - comes up a list. F.e right - right click fires the function
+self - just on that element fires the event, no child element fires it
+
+Slots
+like props, but for more complicated templates for other components. It passes TEMPLATES to another component, NOT DATA
+slot or name slot v-slt:the name
+
+Teleport
+want to have some components outside of the vue.app (in index.html #app), so outside of the vue scope.
+instead of the components is inside a div in the App.vue - rename it to teleport to="css selector"
+
+6. Lifecycle Hooks
+beforeCreate - before the component even fully created, cannot get access to data or template
+created - component has been created but not mounted, can access to data but not to template
+beforeMount - before mounting, access all data, events and template
+mounted - fetch request!
+
+Then the component is mounted - different event (clicking to buttons) - data can change and then it updates
+beforeUpdate - after the data is changed but before the updates are re-rendered
+updated - after the data is changed and it is re-rendered
+
+When the component no longer needed, it gets unmounted
+beforeUnmount
+unmounted
+For component clean up
+
 
 
 

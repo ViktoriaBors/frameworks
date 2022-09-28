@@ -17,3 +17,12 @@ Note v-show uses CSS display none or block to show or hide a certain thing if th
 
 ## 2.Day
 I started to dive in to full Vue project with different components and props. What I really like in a Vue component is that it has a well defined 3 parts (template, script and style). It makes the components more understandable. Right now my head is spinning from the lot of information. I need to process it. 
+
+## 3.Day
+Today was about events and its modifiers, slots, teleport and hooks. Slots are super useful and can make the component extremely reusable. Teleport is another cool features if I want to mount my component not inside the "App". 
+
+I also learned about the lifecycle of the components and their hooks, when I can pass some event in.
+
+I also made a little reaction time game where I actually understood the tutorial and why we doing it that way and managed to do the little challenge by myself. 
+
+Now I am thinking to try all these simpler things by myself with some mini projects. I just need an idea :D
