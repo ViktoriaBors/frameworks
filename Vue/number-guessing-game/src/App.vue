@@ -4,29 +4,42 @@
       <Start></Start>
       <button @click="startGame">Start Here</button>
     </div>
-      <Guesses v-if="isPlaying"></Guesses>
+      <Guesses v-if="isPlaying" @end="endGame"></Guesses>
+      <teleport to="#modal" v-if="isOver">
+      <Scene v-if="isOver" :counter="counter"></Scene>
+      </teleport>
   </div>
 </template>
 
 <script>
 import Start from "./components/Start.vue";
 import Guesses from "./components/Guesses.vue";
+import Scene from "./components/Scene.vue";
 
 export default {
   name: "App",
   components: {
     Start,
     Guesses,
+    Scene,
   },
   data() {
     return {
       isPlaying: false,
+      isOver: false,
+      counter: null,
+
     };
   },
   methods: {
     startGame() {
       this.isPlaying = true;
     },
+    endGame(counter){
+      this.counter = counter
+      this.isOver = true
+      console.log(counter)
+    }
   },
 };
 </script>
@@ -36,14 +49,14 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .container {
   max-width: 550px;
   min-width: 300px;
-
   margin: 1rem;
   padding: 0.5rem;
   border: 1px solid black;
@@ -69,7 +82,5 @@ export default {
   background-color: rgb(117, 145, 160);
   cursor: pointer;
 }
-.hidden{
-     display: none;
- }
+
 </style>

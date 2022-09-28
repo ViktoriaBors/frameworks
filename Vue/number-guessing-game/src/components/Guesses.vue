@@ -19,6 +19,7 @@
     </div>
 
     <p ref="scene"></p>
+
  
 
     
@@ -26,10 +27,8 @@
 </template>
 
 <script>
-//import Scene from "./Scene.vue"
 
 export default {
-   // components: {Scene},
   data() {
     return {
       guessed: [],
@@ -37,8 +36,8 @@ export default {
       isString: false,
       isNotRange: false,
       isOutofGuess: false,
-      isWrong: false,
       isWon: false,
+      isWrong: false,
       counter : 0
     };
   },
@@ -62,11 +61,13 @@ export default {
       this.counter += 1
       this.guessed.push(guess);
       if(this.counter == 10 ){
-        this.$refs.scene.innerHTML = "Game over, no more tries"
+        this.isOutofGuess= true
+        this.$emit("end", this.counter)
         this.$refs.oneGuess.disabled = true
         this.$refs.submitBtn.disabled = true
       } else if (guess == this.theNumber){
-        this.$refs.scene.innerHTML = "Congrats, you guessed right within " + this.counter +" tries"
+        this.$emit("end", this.counter)
+        this.isWon= true
         this.isWrong = false
       } else {
         if( guess > this.theNumber){
