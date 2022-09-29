@@ -126,7 +126,7 @@ import component import name form path - inside the script tag where you use
 it. Plus needs to be added in export default components: {}, then can be added to the template
 PROBLEM with multiword - go to vue.config.js and add - lintOnSave: false
 
-5. Continue with Vue full project and component
+6. Continue with Vue full project and component
 Style - its globally if we just refer to a h1 - all h1 in every component going to be styled like that
 solutions:
 - add scoped to the style tag inside the component
@@ -164,7 +164,7 @@ Teleport
 want to have some components outside of the vue.app (in index.html #app), so outside of the vue scope.
 instead of the components is inside a div in the App.vue - rename it to teleport to="css selector"
 
-6. Lifecycle Hooks
+7. Lifecycle Hooks
 beforeCreate - before the component even fully created, cannot get access to data or template
 created - component has been created but not mounted, can access to data but not to template
 beforeMount - before mounting, access all data, events and template
@@ -178,6 +178,87 @@ When the component no longer needed, it gets unmounted
 beforeUnmount
 unmounted
 For component clean up
+
+8. Forms - data binding
+2-way data binding - v-model
+We want that what user types in the input field, our data (email) is updated
+v-model="the data"
+the values are bind 2way - in the template and the data -> the update is binded and updated in the data too
+other way around too - if the data has already a intial value it is binded to the input field. Like data - email:mario -> mario appears in the input also
+
+select boxes
+v-model is on the select tag, then we have options with values
+if we want that one option is already selected from the beginning - write it in data
+
+checkboxes
+v-model way:
+data - chechbox: boolean
+checked - true by default write true at the data or false - not cehcked
+array way:
+checked - inside the array, give value for the checkboxes but v-model data property is same
+
+Keyboard events and modifiers
+user list skills with coma - we listened to coma
+Deleting skills by click event
+
+Submit form
+send it to database
+can attach a click event on the button (which is inside the form) or attach a @submit="handleSubmit" event on the form itself
+To prevent the defult submit (refreshing) the .prevent cvan be attach to the @submit -> @submit.prevent= "function"
+
+9. Vue router
+ingle page - one index.html send from the server and then from there it handles everything no more request for other html file
+Just switching out component - not sending new request
+
+Router - multiple page
+/about
+/contact
+-> then it hooks these routes
+
+Separate package - vue router needs to be installed
+vue create project name -> manually -> choose router with space, unselect linter with space
+history mode - yes (when deploy-might change)
+
+package.json - router package
+src - router - index.js - here all the different routes
+
+App.vue - router-view -> the router component is injected whenever its home page or about
+
+Router-links - inside the nav
+router-link to="path" Text close
+same with a-href-wont work
+
+better to use with data bind than "hard-coded" - if the path change (from /about to /about-us), the name stays the same and doesnt need to change in the code too much
+
+Folder System
+Smaller project - default set up  with views
+bigger project with like jobs -click - job details route -> could be in view directly but coulld be in a sub folder inside view folder.
+component folder - any individual compoentn which can be nested inside other views. like button, modal, card etc -  not page specific
+
+Detail of a job - Dynamic links
+path: /jobs/:id - would change
+Add props:true inside the index.js under your path in order to accept route paramteres as a props
+so we dont need data(){retrun id:this$routeparams}
+
+redirect - 404 page
+redirect add
+a routes doesnt exists - 404 page
+  path:"/:catchAll(.*)"
+
+Progmmatic nav
+webhistory - using history to go back and forward with the arrows in the browser
+route - info about the current route
+router - do smth
+    go(number) - -nr -> going back -1 one, -2 two times
+    go(number) + going forward
+    push({name:where})
+
+
+
+
+
+
+
 
 
 

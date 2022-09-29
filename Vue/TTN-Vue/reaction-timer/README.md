@@ -1,19 +1,5 @@
-# reaction-timer
+# Reaction-Timer Mini Project
 
-## Project setup
-```
-npm install
-```
+The Net Ninja - Vue for beginner
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Making a little game to track how fast is your reflexes using Vue. I got familiar with lifecycle hooks and implement some of the basics of Vue.

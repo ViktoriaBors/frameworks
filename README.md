@@ -11,4 +11,4 @@ I already have some big project ideas. The story is that we are renovating our h
 
 Btw, what do you think, which one  is going to be ready first? Our house or the app? I honestly hope the house 😄😄😄
 
-So lets get started! See detailed day to day learning process in the TheJourney.md
+So lets get started! See detailed day to day learning process in the TheJourney.md - https://github.com/ViktoriaBors/frameworks/tree/main/Vue

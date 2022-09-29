@@ -26,3 +26,6 @@ I also learned about the lifecycle of the components and their hooks, when I can
 I also made a little reaction time game where I actually understood the tutorial and why we doing it that way and managed to do the little challenge by myself. 
 
 Now I am thinking to try all these simpler things by myself with some mini projects. I just need an idea :D
+
+## 4.Day
+Today I moved forward to forms and how extract the data from it. Moreover get insight to Vue router features.
