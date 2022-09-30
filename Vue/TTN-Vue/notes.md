@@ -253,6 +253,78 @@ router - do smth
     go(number) + going forward
     push({name:where})
 
+9. Fetching external data with vue
+JSON server - package  npm install json-server
+
+fetch data - inside the mounted lifecycle hook
+ASYNC - cannot access to data right away
+Set a v-if="the data" -its null in the beginning, but after the fetch is ready - it will be true and then we can see the details
+
+10. API
+Option API: data method computed lifecycle hook directly to the components
+
+Composition API: 
+inside the component object - setup(){} - function 
+inside this setup comes all the data,method, computed etc
+organize and group features and logic inside to setup ->reusable composition features
+--> composition functions can be just imported inside the setup()
+
+setup() inside the component - it runs before any lifecycle hook!!!
+Normal JS can be written inside, for example variables let name etc. To use them inside the template, they need to be returned by return {object like name:name etc} IF the key and the variable is the same, it can be shortened just.
+
+These data are not reactive values, so if it changes, it wont be output, while data(){} is reactive!! Can be made reactive too (later)
+
+Template refs
+Option API - this.$refs.name, this refers to component
+Composition API - no this (undefined), const DOMElement = ref(null or some value) -import ref from vue and return it, in template write ref="name in the setup"
+
+Using ref to reactivity
+variable can be updated inside the setup - but it wont update in the template
+They need to be reactive - REF
+
+Reactive
+dont need value inside to refer it
+ninjatwo.age not ningjatwo.value.age
+drawback - it is primitive value - cant update
+
+Computed values
+const filteredData = computed(()=>{}) - import
+
+Watch and watchEffect 
+composition API - new hooks
+watch(what to watch, function what to do )
+watchEffect(just the function) - initally runs when the setup first run and then doesnt if there is no argument about what to watch
+write waht to watch inside the function - then it runs initially and everytime the waht to watch change
+WatchEffect - get data from database - initially already
+
+stop the watch 
+create a const stop = watch()... - then invoke it
+
+11. Composition API cont
+Props
+AS before - props -databind :propname=data inside the template - then accept the props inside the component. 
+To use the props inside the setup(){} we need to pass it as an argument setup(props){}
+
+Lifecycle Hooks
+can be used outside of setup or inside - needs to be imported and on-comes before
+so instead of mounted -> onMounted
+
+Fetching data inside the setup
+Async and await
+
+Reusable composable
+separate function - own file -> import to another component and invoke it if you need to use the same data
+Its a JS file inside a new folder composable inside src folder
+
+Inside the JS - write the fetch/function
+return some data what is used inside the parent component (post, error)
+exported
+
+then inside the parent component
+import it, make a const with all the return variables = function and return
+
+
+
 
 
 

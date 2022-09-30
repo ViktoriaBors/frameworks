@@ -1,4 +1,4 @@
-# ninja-jobs
+# dojo-blog
 
 ## Project setup
 ```

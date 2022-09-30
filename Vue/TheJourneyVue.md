@@ -29,3 +29,10 @@ Now I am thinking to try all these simpler things by myself with some mini proje
 
 ## 4.Day
 Today I moved forward to forms and how extract the data from it. Moreover get insight to Vue router features.
+
+## 5.Day
+Today was dense. All about fetch API and composition API.
+
+That also means I finished the tutorial from The Net Ninja.
+
+I think I got the basics pretty good and I might able to start up my own big project (Track Down Bill). My most concern is right now I am not sure how to design the different components and how small a component should be etc. So I decided I give a few days to do a smaller project with kinda the same functions (CRUD). Something with a blog or todo application. 
