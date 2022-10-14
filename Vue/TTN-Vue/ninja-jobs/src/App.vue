@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="nav">
     <router-link to="/">Home</router-link>
     <router-link :to="{ name: 'About' }">About</router-link>
@@ -10,6 +11,8 @@
   <button @click="forward">Go forward</button>
 
   <router-view/>
+
+</div>
 </template>
 
 <script>

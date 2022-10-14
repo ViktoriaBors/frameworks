@@ -36,3 +36,9 @@ Today was dense. All about fetch API and composition API.
 That also means I finished the tutorial from The Net Ninja.
 
 I think I got the basics pretty good and I might able to start up my own big project (Track Down Bill). My most concern is right now I am not sure how to design the different components and how small a component should be etc. So I decided I give a few days to do a smaller project with kinda the same functions (CRUD). Something with a blog or todo application. 
+
+## 6. - 12. Day
+So I made two small practice project to see how much info sticked on me :) One is a fake webshop other one is a basic todo app. Both gave me good insight what I am missing or needs to be practiced more.
+
+## 13. Day
+Starting to follow a course on Udemy to get deeper knowledge about Vue. 
